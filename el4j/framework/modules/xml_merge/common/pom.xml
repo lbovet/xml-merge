@@ -3,19 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<!-- $Revision$ -->
-	<!-- $URL$ -->
-	<!-- $Date$ -->
-	<!-- $Author$ -->
-
-	<parent>
-		<groupId>ch.elca.el4j.modules</groupId>
-		<artifactId>module-xml_merge</artifactId>
-		<version>3.2-SNAPSHOT</version>
-	</parent>
-
+	<groupId>li.chee.xmlmerge</groupId>
 	<artifactId>module-xml_merge-common</artifactId>
+	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>EL4J module XmlMerge common</name>
 	<description>
@@ -23,12 +13,6 @@
 	</description>
 
 	<dependencies>
-		<!-- EL4J framework modules -->
-		<dependency>
-			<groupId>ch.elca.el4j.modules</groupId>
-			<artifactId>module-core</artifactId>
-		</dependency>
-
 		<!-- Third party tools -->
 		<dependency>
 			<groupId>com.wutka</groupId>
@@ -46,8 +30,19 @@
 			<version>1.1.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.ant</groupId>
-			<artifactId>ant</artifactId>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
 		</dependency>
 	</dependencies>
 </project>

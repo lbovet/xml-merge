@@ -24,7 +24,7 @@ package ch.elca.el4j.services.xmlmerge;
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */
-public abstract class AbstractXmlMergeException extends Exception {
+public abstract class AbstractXmlMergeException extends RuntimeException {
 
 	/**
 	 * Default constructor.

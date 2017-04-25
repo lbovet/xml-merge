@@ -61,10 +61,4 @@ public final class StandardActions {
 	 * {@link InsertAction}
 	 */
 	public static final InsertAction INSERT = new InsertAction();
-	
-	/**
-	 * {@link DtdInsertAction}
-	 */
-	public static final DtdInsertAction DTD = new DtdInsertAction();
-	
 }

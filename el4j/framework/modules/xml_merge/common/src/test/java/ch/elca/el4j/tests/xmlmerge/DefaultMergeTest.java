@@ -19,35 +19,10 @@
 
 package ch.elca.el4j.tests.xmlmerge;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Properties;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.jdom.Element;
-import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.InputSource;
-
-import ch.elca.el4j.core.context.ModuleApplicationContext;
 import ch.elca.el4j.services.xmlmerge.Configurer;
 import ch.elca.el4j.services.xmlmerge.Matcher;
 import ch.elca.el4j.services.xmlmerge.MergeAction;
 import ch.elca.el4j.services.xmlmerge.XmlMerge;
-import ch.elca.el4j.services.xmlmerge.XmlMergeContext;
 import ch.elca.el4j.services.xmlmerge.action.CompleteAction;
 import ch.elca.el4j.services.xmlmerge.action.OrderedMergeAction;
 import ch.elca.el4j.services.xmlmerge.config.AttributeMergeConfigurer;
@@ -55,7 +30,17 @@ import ch.elca.el4j.services.xmlmerge.config.ConfigurableXmlMerge;
 import ch.elca.el4j.services.xmlmerge.config.PropertyXPathConfigurer;
 import ch.elca.el4j.services.xmlmerge.factory.XPathOperationFactory;
 import ch.elca.el4j.services.xmlmerge.merge.DefaultXmlMerge;
-import ch.elca.el4j.util.codingsupport.annotations.FindBugsSuppressWarnings;
+import org.jdom.Element;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Properties;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * This class tests several functionalities of the xml_merge module, using a
@@ -67,14 +52,11 @@ import ch.elca.el4j.util.codingsupport.annotations.FindBugsSuppressWarnings;
  * @author Alex Mathey (AMA)
  */
 public class DefaultMergeTest {
-
-	private static Logger logger
-		= LoggerFactory.getLogger(DefaultMergeTest.class);
 	
 	/**
 	 * New line.
 	 */
-	public static final String NL = System.getProperty("line.separator");
+	private static final String NL = System.getProperty("line.separator");
 	
 	/**
 	 * Tests a simple merge of two strings.
@@ -225,8 +207,6 @@ public class DefaultMergeTest {
 	 *             If an error occurs during the test
 	 */
 	@Test
-	@FindBugsSuppressWarnings (value = {"OS_OPEN_STREAM", "OBL_UNSATISFIED_OBLIGATION"},
-		justification = "Not important in test method.")
 	public void testPropertyXPathConfigurer() throws Exception {
 		
 		
@@ -292,103 +272,6 @@ public class DefaultMergeTest {
 			+ "</root>";
 		
 		assertEquals(expected.trim(), result.trim());
-	}
-	
-	/**
-	 * Tests the creation of an XML Spring Resource on-the-fly by merging XML
-	 * documents read from other resources.
-	 *
-	 * @throws Exception
-	 *             If an error occurs during the test
-	 */
-	@Test
-	public void testSpringResource() throws Exception {
-		
-		ApplicationContext appContext = new ModuleApplicationContext(
-			new String[] {
-				"classpath*:mandatory/*.xml",
-				"classpath*:etc/template/xmlmerge-config.xml"
-			}, null, false, null);
-		
-		Resource r = (Resource) appContext.getBean("merged");
-
-		InputStream in = r.getInputStream();
-
-		ByteArrayOutputStream bos = new ByteArrayOutputStream();
-
-		int len;
-		byte[] buffer = new byte[1024];
-		while ((len = in.read(buffer)) != -1) {
-			bos.write(buffer, 0, len);
-		}
-		
-		String expected = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL
-			+ "<root>" + NL
-			+ "  <a>" + NL
-			+ "    <b />" + NL
-			+ "  </a>" + NL
-			+ "  <c />" + NL
-			+ "</root>";
-		
-		assertEquals(expected.trim(), bos.toString().trim());
-	}
-	
-	/**
-	 * Tests a DTD merge of two source files using a DtdInsertAction: inserts
-	 * the patch elements in the result according to the order specified in the
-	 * original document's DTD.
-	 *
-	 * @throws Exception
-	 *             If an error occurs during the test
-	 */
-	@Test
-	@FindBugsSuppressWarnings (value = {"OS_OPEN_STREAM", "OBL_UNSATISFIED_OBLIGATION"},
-								justification = "Not important in test method.")
-	public void testDtdMerge() throws Exception {
-		
-		InputStream[] streams
-			= new InputStream[] {
-				this.getClass().getResourceAsStream("sqlmap1.xml"),
-				this.getClass().getResourceAsStream("sqlmap2.xml") };
-				
-		
-		File outputFile
-			= File.createTempFile("xml-merge-common-tests", "out2.xml");
-		outputFile.deleteOnExit();
-		
-		OutputStream out = null;
-		
-		
-		try {
-			out = new FileOutputStream(outputFile);
-		} catch (FileNotFoundException e)  {
-			logger.debug("Output file not found: " + e.getLocalizedMessage());
-		}
-		Properties props = new Properties();
-		try {
-			props.load(this.getClass().getResourceAsStream("test-dtd.properties"));
-		} catch (IOException e) {
-			logger.debug("IOException while loading properties: " + e.getLocalizedMessage());
-		}
-	
-		ConfigurableXmlMerge xmlMerge = new ConfigurableXmlMerge(
-			new PropertyXPathConfigurer(props));
-		XmlMergeContext.setEntityResolver(new NonNetworkIbatisResolver());
-		
-		InputStream in = xmlMerge.merge(streams);
-		
-		writeFromTo(in, out);
-		try {
-			if (in != null) {
-				in.close();
-			}
-			if (out != null) {
-				out.close();
-			}	
-		} catch (IOException e) {
-			logger.debug("Exception while cloasing streams: " + e.getLocalizedMessage());
-		}
-			
 	}
 	
 	/**
@@ -662,57 +545,5 @@ public class DefaultMergeTest {
 		
 		assertEquals(expected.trim(), result.trim());
 	}
-	
-	/**
-	 * private EntityResolver that does not use the network.
-	 *
-	 *  Inspired by Spring's  BeansDtdResolver
-	 *   Works for dtd of ibatis
-	 */
-	class NonNetworkIbatisResolver implements EntityResolver {
-		
-		private static final String DTD_EXTENSION = ".dtd";
-
-		private final String[] DTD_NAMES = {"sql-map-config-2.dtd"};
-
-		
-		public InputSource resolveEntity(String publicId, String systemId) throws IOException {
-			if (systemId != null && systemId.endsWith(DTD_EXTENSION)) {
-				int lastPathSeparator = systemId.lastIndexOf("/");
-				for (int i = 0; i < DTD_NAMES.length; ++i) {
-					int dtdNameStart = systemId.indexOf(DTD_NAMES[i]);
-					if (dtdNameStart > lastPathSeparator) {
-						String dtdFile = systemId.substring(dtdNameStart);
-						if (logger.isTraceEnabled()) {
-							logger.trace("Trying to locate [" + dtdFile + "] in Spring jar");
-						}
-						try {
-							Resource resource = new ClassPathResource( /*"ch/elca/el4j/tests/xmlmerge/"+*/
-								dtdFile, getClass());
-							InputSource source = new InputSource(resource.getInputStream());
-							source.setPublicId(publicId);
-							source.setSystemId(systemId);
-							if (logger.isDebugEnabled()) {
-								logger.debug("Found beans DTD [" + systemId + "] in classpath: " + dtdFile);
-							}
-							return source;
-						}
-						catch (IOException ex) {
-							if (logger.isDebugEnabled()) {
-								logger.debug("Could not resolve beans DTD [" + systemId + "]: not found in class path", ex);
-							}
-						}
-					
-					}
-				}
-			}
-
-			// Use the default behavior -> download from website or wherever.
-			return null;
-		}
-
-	}
-
 }
 
-//Checkstyle: MagicNumber on
