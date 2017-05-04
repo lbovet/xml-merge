@@ -19,17 +19,17 @@
 
 package ch.elca.el4j.tests.xmlmerge;
 
-import ch.elca.el4j.services.xmlmerge.Configurer;
-import ch.elca.el4j.services.xmlmerge.Matcher;
-import ch.elca.el4j.services.xmlmerge.MergeAction;
-import ch.elca.el4j.services.xmlmerge.XmlMerge;
-import ch.elca.el4j.services.xmlmerge.action.CompleteAction;
-import ch.elca.el4j.services.xmlmerge.action.OrderedMergeAction;
-import ch.elca.el4j.services.xmlmerge.config.AttributeMergeConfigurer;
-import ch.elca.el4j.services.xmlmerge.config.ConfigurableXmlMerge;
-import ch.elca.el4j.services.xmlmerge.config.PropertyXPathConfigurer;
-import ch.elca.el4j.services.xmlmerge.factory.XPathOperationFactory;
-import ch.elca.el4j.services.xmlmerge.merge.DefaultXmlMerge;
+import ch.galinet.xml.xmlmerge.Configurer;
+import ch.galinet.xml.xmlmerge.Matcher;
+import ch.galinet.xml.xmlmerge.MergeAction;
+import ch.galinet.xml.xmlmerge.XmlMerge;
+import ch.galinet.xml.xmlmerge.action.CompleteAction;
+import ch.galinet.xml.xmlmerge.action.OrderedMergeAction;
+import ch.galinet.xml.xmlmerge.config.AttributeMergeConfigurer;
+import ch.galinet.xml.xmlmerge.config.ConfigurableXmlMerge;
+import ch.galinet.xml.xmlmerge.config.PropertyXPathConfigurer;
+import ch.galinet.xml.xmlmerge.factory.XPathOperationFactory;
+import ch.galinet.xml.xmlmerge.merge.DefaultXmlMerge;
 import org.jdom.Element;
 import org.junit.Test;
 
