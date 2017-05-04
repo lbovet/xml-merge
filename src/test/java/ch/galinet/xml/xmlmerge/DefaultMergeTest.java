@@ -17,7 +17,7 @@
 
 //Checkstyle: MagicNumber off
 
-package ch.elca.el4j.tests.xmlmerge;
+package ch.galinet.xml.xmlmerge;
 
 import ch.galinet.xml.xmlmerge.Configurer;
 import ch.galinet.xml.xmlmerge.Matcher;
