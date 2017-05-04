@@ -3,8 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>li.chee.xmlmerge</groupId>
-	<artifactId>module-xml_merge-common</artifactId>
+	<groupId>ch.galinet.xml</groupId>
+	<artifactId>xml-merge</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>EL4J module XmlMerge common</name>
