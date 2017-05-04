@@ -75,6 +75,13 @@
 			<version>0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+	<licenses>
+		<license>
+			<name>GNU General Lesser Public License (LGPL) version 2.1</name>
+			<url>https://www.gnu.org/licenses/lgpl-2.1.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 </project>
 
 
