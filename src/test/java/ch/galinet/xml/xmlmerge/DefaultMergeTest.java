@@ -494,7 +494,7 @@ public class DefaultMergeTest {
         };
 
         String conf = "xpath.path1=/web-app/servlet" + NL
-                + "matcher.path1=ch.elca.el4j.tests.xmlmerge."
+                + "matcher.path1=ch.galinet.xml.xmlmerge."
                 + "DefaultMergeTest$ServletNameMatcher" + NL
                 + "xpath.path2=/web-app/servlet/servlet-name" + NL
                 + "action.path2=PRESERVE" + NL
