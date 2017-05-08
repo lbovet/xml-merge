@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.galinet.xml</groupId>
 	<artifactId>xml-merge</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>EL4J module XmlMerge common</name>
 	<description>
@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>ch.galinet.xml</groupId>
 			<artifactId>xsd-hierarchy</artifactId>
-			<version>0.1-SNAPSHOT</version>
+			<version>0.1</version>
 		</dependency>
 	</dependencies>
 	<licenses>
