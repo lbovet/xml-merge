@@ -27,8 +27,6 @@ import org.jdom2.Namespace;
 /**
  * Filters out elements and attributes with a specified namespace.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

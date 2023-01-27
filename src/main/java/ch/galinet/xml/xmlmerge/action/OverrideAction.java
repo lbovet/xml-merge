@@ -23,8 +23,6 @@ import org.jdom2.Element;
  * Copies the patch element if it exist in the original, keep the original if no
  * corresponding patch element exists.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

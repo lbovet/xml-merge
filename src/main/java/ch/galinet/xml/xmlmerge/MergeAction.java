@@ -21,8 +21,6 @@ package ch.galinet.xml.xmlmerge;
  * actions to apply to children elements are configurable through this
  * interface.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

@@ -15,10 +15,6 @@
  * For alternative licensing, please contact info@elca.ch
  */
 /**
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * Implementation of built-in matchers.
- *
- * @wikiLink ModuleXmlMerge
  */
 package ch.galinet.xml.xmlmerge.matcher;

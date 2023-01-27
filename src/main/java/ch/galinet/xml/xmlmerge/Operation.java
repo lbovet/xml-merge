@@ -20,8 +20,6 @@ package ch.galinet.xml.xmlmerge;
  * Abstraction for matchers, mappers or actions two be creatable by the same
  * factory classes.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

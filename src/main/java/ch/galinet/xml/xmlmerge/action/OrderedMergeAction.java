@@ -39,8 +39,6 @@ import ch.galinet.xml.xmlmerge.Matcher;
  * Merge implementation traversing parallelly both element contents. Works when
  * contents are in the same order in both elements.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

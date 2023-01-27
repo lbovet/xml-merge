@@ -21,8 +21,6 @@ import org.jdom2.Document;
 /**
  * Thrown when something is wrong with a source or output document.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

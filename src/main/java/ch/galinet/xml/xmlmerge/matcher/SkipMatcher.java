@@ -22,8 +22,6 @@ import org.jdom2.Element;
 /**
  * Elements compared with this matcher never match.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

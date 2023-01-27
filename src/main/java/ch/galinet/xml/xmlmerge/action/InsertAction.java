@@ -31,8 +31,6 @@ import ch.galinet.xml.xmlmerge.Action;
  * existing elements of the same name. Usually applied with the
  * {@link SkipMatcher}.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

@@ -27,8 +27,6 @@ import ch.galinet.xml.xmlmerge.OperationFactory;
  * Creates operations by inspecting keywords passed as attributes in patch
  * elements.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

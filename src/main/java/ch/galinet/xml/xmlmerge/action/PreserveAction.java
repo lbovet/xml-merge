@@ -22,8 +22,6 @@ import org.jdom2.Element;
 /**
  * Copies the original regardless of the existence of patch element.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

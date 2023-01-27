@@ -15,10 +15,6 @@
  * For alternative licensing, please contact info@elca.ch
  */
 /**
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * Default implementation of XmlMerge.
- *
- * @wikiLink ModuleXmlMerge
  */
 package ch.galinet.xml.xmlmerge.merge;

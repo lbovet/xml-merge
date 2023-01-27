@@ -25,8 +25,6 @@ import ch.galinet.xml.xmlmerge.OperationFactory;
  * An operation factory returning always the same operation whatever the
  * specified elements.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

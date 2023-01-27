@@ -20,8 +20,6 @@ package ch.galinet.xml.xmlmerge.mapper;
  * Constant for built-in mappers. The constant names are also used in the
  * configuration.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

@@ -22,8 +22,6 @@ import org.jdom2.Element;
  * Creates operation (action, mapper and matcher) instances corresponding to a
  * pair of elements from the original and patch DOMs.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

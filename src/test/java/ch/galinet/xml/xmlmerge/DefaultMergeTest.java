@@ -45,7 +45,6 @@ import ch.galinet.xml.xmlmerge.merge.DefaultXmlMerge;
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  */
 class DefaultMergeTest {
 
@@ -405,7 +404,6 @@ class DefaultMergeTest {
      *
      * @author Laurent Bovet (LBO)
      * @author Alex Mathey (AMA)
-     * @svnLink $Revision$;$Date$;$Author$;$URL$
      */
     public static class ServletNameMatcher implements Matcher {
 

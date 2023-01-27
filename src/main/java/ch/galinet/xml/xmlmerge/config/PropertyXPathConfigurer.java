@@ -32,8 +32,6 @@ import ch.galinet.xml.xmlmerge.factory.XPathOperationFactory;
  * Reads the {@link XPathOperationFactory}
  * configuration from a property file or a map.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

@@ -21,8 +21,6 @@ import org.jdom2.Element;
 /**
  * Operation on two nodes creating a third node.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

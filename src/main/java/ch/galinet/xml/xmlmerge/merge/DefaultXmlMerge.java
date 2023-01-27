@@ -51,8 +51,6 @@ import ch.galinet.xml.xmlmerge.matcher.TagMatcher;
  * Default implementation of XmlMerge. Create all JDOM documents, then perform
  * the merge into a new JDOM document.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

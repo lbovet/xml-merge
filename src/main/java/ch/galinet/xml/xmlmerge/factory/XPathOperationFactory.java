@@ -35,7 +35,6 @@ import ch.galinet.xml.xmlmerge.OperationFactory;
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  */
 public class XPathOperationFactory implements OperationFactory {
 

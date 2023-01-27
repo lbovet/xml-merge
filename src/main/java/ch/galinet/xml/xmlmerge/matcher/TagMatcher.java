@@ -22,8 +22,6 @@ import org.jdom2.Element;
 /**
  * Compares the qualified name of elements.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

@@ -19,8 +19,6 @@ package ch.galinet.xml.xmlmerge;
 /**
  * Thrown when XML parsing fails.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

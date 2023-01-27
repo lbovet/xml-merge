@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.galinet.xml</groupId>
 	<artifactId>xml-merge</artifactId>
 	<version>0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
+
 	<name>EL4J module XmlMerge common</name>
-	<description>
-		Module XmlMerge, common parts of the EL4J framework.
-	</description>
+	<description>Module XmlMerge, common parts of the EL4J framework.</description>
+	<url>https://github.com/nilsaellen/xml-merge</url>
+
+	<developers>
+		<developer>
+			<name>Nils Aellen</name>
+			<email>nils@aellen.org</email>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>GNU General Lesser Public License (LGPL) version 2.1</name>
+			<url>https://www.gnu.org/licenses/lgpl-2.1.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git://github.com/nilsaellen/xml-merge.git</connection>
+		<developerConnection>scm:git:ssh://github.com:nilsaellen/xml-merge.git</developerConnection>
+		<url>http://github.com/nilsaellen/xml-merge/tree/master</url>
+	</scm>
+
 	<properties>
-		<slf4j.version>2.0.6</slf4j.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jaxen.version>2.0.0</jaxen.version>
+		<jdom2.version>2.0.6.1</jdom2.version>
 		<junit-jupiter-engine.version>5.9.2</junit-jupiter-engine.version>
+		<maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version>
+		<maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+		<maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+		<maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+		<nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
+		<slf4j.version>2.0.6</slf4j.version>
+		<xsd-hierarchy.version>0.2</xsd-hierarchy.version>
 	</properties>
 
 	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
 					<source>17</source>
 					<target>17</target>
@@ -29,15 +61,9 @@
 	</build>
 
 	<distributionManagement>
-		<repository>
-			<id>artifactory-releases</id>
-			<name>artifactory.pnet.ch-releases</name>
-			<url>http://artifactory.pnet.ch/artifactory/libs-release-local</url>
-		</repository>
 		<snapshotRepository>
-			<id>artifactory-snapshots</id>
-			<name>artifactory.pnet.ch-snapshots</name>
-			<url>http://artifactory.pnet.ch/artifactory/libs-snapshot-local</url>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -46,12 +72,12 @@
 		<dependency>
 			<groupId>org.jdom</groupId>
 			<artifactId>jdom2</artifactId>
-			<version>2.0.6.1</version>
+			<version>${jdom2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>jaxen</groupId>
 			<artifactId>jaxen</artifactId>
-			<version>2.0.0</version>
+			<version>${jaxen.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -72,14 +98,79 @@
 		<dependency>
 			<groupId>ch.galinet.xml</groupId>
 			<artifactId>xsd-hierarchy</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>${xsd-hierarchy.version}</version>
 		</dependency>
 	</dependencies>
-	<licenses>
-		<license>
-			<name>GNU General Lesser Public License (LGPL) version 2.1</name>
-			<url>https://www.gnu.org/licenses/lgpl-2.1.html</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+
+	<profiles>
+		<profile>
+			<id>sonatype-oss-release</id>
+			<build>
+				<plugins>
+
+					<!-- Generate source attachment -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>${maven-source-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- Generate javadoc attachment -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>${maven-javadoc-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- Sign the artifacts -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${maven-gpg-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<configuration>
+									<homedir>${session.executionRootDirectory}</homedir>
+									<keyname>eb11bc74</keyname>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>${nexus-staging-maven-plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>false</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 </project>

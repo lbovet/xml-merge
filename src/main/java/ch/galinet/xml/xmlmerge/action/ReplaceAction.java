@@ -23,8 +23,6 @@ import ch.galinet.xml.xmlmerge.Action;
 /**
  * Copies the patch element if it exists.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */
