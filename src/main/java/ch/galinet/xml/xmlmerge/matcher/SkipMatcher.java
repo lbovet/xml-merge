@@ -17,12 +17,10 @@
 package ch.galinet.xml.xmlmerge.matcher;
 
 import ch.galinet.xml.xmlmerge.Matcher;
-import org.jdom.Element;
+import org.jdom2.Element;
 
 /**
  * Elements compared with this matcher never match.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)

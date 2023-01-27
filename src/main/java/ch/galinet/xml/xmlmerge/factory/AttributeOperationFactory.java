@@ -17,8 +17,8 @@
 package ch.galinet.xml.xmlmerge.factory;
 
 import ch.galinet.xml.xmlmerge.AbstractXmlMergeException;
-import org.jdom.Element;
-import org.jdom.Namespace;
+import org.jdom2.Element;
+import org.jdom2.Namespace;
 
 import ch.galinet.xml.xmlmerge.Operation;
 import ch.galinet.xml.xmlmerge.OperationFactory;
@@ -26,8 +26,6 @@ import ch.galinet.xml.xmlmerge.OperationFactory;
 /**
  * Creates operations by inspecting keywords passed as attributes in patch
  * elements.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)

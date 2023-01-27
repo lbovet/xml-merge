@@ -16,7 +16,7 @@
  */
 package ch.galinet.xml.xmlmerge.factory;
 
-import org.jdom.Element;
+import org.jdom2.Element;
 
 import ch.galinet.xml.xmlmerge.Operation;
 import ch.galinet.xml.xmlmerge.OperationFactory;
@@ -24,8 +24,6 @@ import ch.galinet.xml.xmlmerge.OperationFactory;
 /**
  * An operation factory returning always the same operation whatever the
  * specified elements.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)

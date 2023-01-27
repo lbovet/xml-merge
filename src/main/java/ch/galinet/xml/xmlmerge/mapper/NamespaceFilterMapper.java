@@ -20,14 +20,12 @@ import java.util.Iterator;
 import java.util.List;
 
 import ch.galinet.xml.xmlmerge.Mapper;
-import org.jdom.Attribute;
-import org.jdom.Element;
-import org.jdom.Namespace;
+import org.jdom2.Attribute;
+import org.jdom2.Element;
+import org.jdom2.Namespace;
 
 /**
  * Filters out elements and attributes with a specified namespace.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)

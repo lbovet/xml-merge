@@ -25,8 +25,6 @@ import ch.galinet.xml.xmlmerge.matcher.TagMatcher;
 /**
  * Gathers the operation factory-related behaviour and a default configuration.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

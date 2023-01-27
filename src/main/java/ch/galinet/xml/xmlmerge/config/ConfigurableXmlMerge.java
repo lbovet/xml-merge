@@ -31,8 +31,6 @@ import ch.galinet.xml.xmlmerge.XmlMerge;
 /**
  * XmlMerge wrapper applying a configurer on the wrapped instance.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

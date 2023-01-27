@@ -21,8 +21,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import ch.galinet.xml.xmlmerge.matcher.SkipMatcher;
-import org.jdom.Content;
-import org.jdom.Element;
+import org.jdom2.Content;
+import org.jdom2.Element;
 
 import ch.galinet.xml.xmlmerge.Action;
 
@@ -30,8 +30,6 @@ import ch.galinet.xml.xmlmerge.Action;
  * Copies the patch element into the output by inserting it after already
  * existing elements of the same name. Usually applied with the
  * {@link SkipMatcher}.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)

@@ -19,8 +19,6 @@ package ch.galinet.xml.xmlmerge;
 /**
  * Base class for all exceptions thrown by XmlMerge.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

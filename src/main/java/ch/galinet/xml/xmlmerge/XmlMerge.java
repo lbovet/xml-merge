@@ -23,8 +23,6 @@ import org.w3c.dom.Document;
 /**
  * Entry point for merging XML documents.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

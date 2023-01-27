@@ -5,7 +5,7 @@ import ch.galinet.xml.xsdhierarchy.MapNamespaceContext;
 import ch.galinet.xml.xsdhierarchy.XsdHelper;
 import ch.galinet.xml.xsdhierarchy.XsdParser;
 import org.apache.commons.lang3.tuple.Pair;
-import org.jdom.Element;
+import org.jdom2.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;

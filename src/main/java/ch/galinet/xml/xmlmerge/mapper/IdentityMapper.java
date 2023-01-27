@@ -17,13 +17,11 @@
 package ch.galinet.xml.xmlmerge.mapper;
 
 import ch.galinet.xml.xmlmerge.Mapper;
-import org.jdom.Element;
+import org.jdom2.Element;
 
 
 /**
  * Does not transform the element.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)

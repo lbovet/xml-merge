@@ -17,12 +17,10 @@
 package ch.galinet.xml.xmlmerge.action;
 
 import ch.galinet.xml.xmlmerge.Action;
-import org.jdom.Element;
+import org.jdom2.Element;
 
 /**
  * Keeps the original element only if it does not appear in the patch document.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)

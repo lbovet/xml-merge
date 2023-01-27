@@ -38,8 +38,6 @@ import ch.galinet.xml.xmlmerge.matcher.TagMatcher;
 /**
  * Superclass for configurers using XPathOperationFactory.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

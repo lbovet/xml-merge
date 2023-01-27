@@ -19,8 +19,6 @@ package ch.galinet.xml.xmlmerge;
 /**
  * Thrown when something wrong happens in the XmlMerge configuration.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

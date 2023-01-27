@@ -19,8 +19,6 @@ package ch.galinet.xml.xmlmerge.matcher;
 /**
  * Constants for built-in matchers.
  *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
- *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
  */

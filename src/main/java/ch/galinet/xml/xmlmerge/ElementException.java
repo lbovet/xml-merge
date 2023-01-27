@@ -16,12 +16,10 @@
  */
 package ch.galinet.xml.xmlmerge;
 
-import org.jdom.Element;
+import org.jdom2.Element;
 
 /**
  * Thrown when there is something wrong with an element.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)

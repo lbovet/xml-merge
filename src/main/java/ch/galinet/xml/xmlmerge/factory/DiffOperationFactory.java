@@ -17,7 +17,7 @@
 package ch.galinet.xml.xmlmerge.factory;
 
 import ch.galinet.xml.xmlmerge.AbstractXmlMergeException;
-import org.jdom.Element;
+import org.jdom2.Element;
 
 import ch.galinet.xml.xmlmerge.Operation;
 import ch.galinet.xml.xmlmerge.OperationFactory;
@@ -25,8 +25,6 @@ import ch.galinet.xml.xmlmerge.OperationFactory;
 /**
  * An operation factory delegating to other operation factories according to the
  * existence of the original and patch element.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
