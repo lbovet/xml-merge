@@ -16,7 +16,7 @@
  */
 package ch.galinet.xml.xmlmerge;
 
-import org.jdom.Element;
+import org.jdom2.Element;
 
 /**
  * Transforms an element to another element by changing some nested content or

@@ -19,15 +19,7 @@
 
 package ch.galinet.xml.xmlmerge;
 
-import ch.galinet.xml.xmlmerge.action.CompleteAction;
-import ch.galinet.xml.xmlmerge.action.OrderedMergeAction;
-import ch.galinet.xml.xmlmerge.config.AttributeMergeConfigurer;
-import ch.galinet.xml.xmlmerge.config.ConfigurableXmlMerge;
-import ch.galinet.xml.xmlmerge.config.PropertyXPathConfigurer;
-import ch.galinet.xml.xmlmerge.factory.XPathOperationFactory;
-import ch.galinet.xml.xmlmerge.merge.DefaultXmlMerge;
-import org.jdom.Element;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,7 +28,16 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import static org.junit.Assert.assertEquals;
+import org.jdom2.Element;
+import org.junit.jupiter.api.Test;
+
+import ch.galinet.xml.xmlmerge.action.CompleteAction;
+import ch.galinet.xml.xmlmerge.action.OrderedMergeAction;
+import ch.galinet.xml.xmlmerge.config.AttributeMergeConfigurer;
+import ch.galinet.xml.xmlmerge.config.ConfigurableXmlMerge;
+import ch.galinet.xml.xmlmerge.config.PropertyXPathConfigurer;
+import ch.galinet.xml.xmlmerge.factory.XPathOperationFactory;
+import ch.galinet.xml.xmlmerge.merge.DefaultXmlMerge;
 
 /**
  * This class tests several functionalities of the xml_merge module, using a
@@ -46,7 +47,7 @@ import static org.junit.Assert.assertEquals;
  * @author Alex Mathey (AMA)
  * @svnLink $Revision$;$Date$;$Author$;$URL$
  */
-public class DefaultMergeTest {
+class DefaultMergeTest {
 
     /**
      * New line.
@@ -56,10 +57,9 @@ public class DefaultMergeTest {
     /**
      * Tests a simple merge of two strings.
      *
-     * @throws Exception If an error occurs during the test
      */
     @Test
-    public void testSimpleMerge() throws Exception {
+    void testSimpleMerge() {
 
         String xml1 = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>"
                 + "<root attr1=\"1\">"
@@ -129,10 +129,9 @@ public class DefaultMergeTest {
     /**
      * Tests a merge of three strings.
      *
-     * @throws Exception If an error occurs during the test
      */
     @Test
-    public void testThreeMerges() throws Exception {
+    void testThreeMerges() {
 
         String[] sources = {
                 "<root><a/></root>",
@@ -157,10 +156,9 @@ public class DefaultMergeTest {
      * Tests programmatic configuration of an XmlMerge instance, using an
      * XPathOperationFactory.
      *
-     * @throws Exception If an error occurs during the test
      */
     @Test
-    public void testXPathOperationFactory() throws Exception {
+    void testXPathOperationFactory() {
 
         String[] sources = {
                 "<root><a/><c/></root>",
@@ -202,7 +200,7 @@ public class DefaultMergeTest {
      * @throws Exception If an error occurs during the test
      */
     @Test
-    public void testPropertyXPathConfigurer() throws Exception {
+    void testPropertyXPathConfigurer() throws Exception {
 
 
         String[] sources = {
@@ -232,10 +230,9 @@ public class DefaultMergeTest {
      * Tests the InsertAction in conjunction with the SkipMatcher, inserting the
      * patch elements after the original elements of the same tag in the result.
      *
-     * @throws Exception If an error occurs during the test
      */
     @Test
-    public void testInsertAction() throws Exception {
+    void testInsertAction() {
 
         String[] sources = {
                 "<root><a id=\"a1\"/><b id=\"b1\"/>"
@@ -271,10 +268,9 @@ public class DefaultMergeTest {
     /**
      * Tests a merge of an element's attributes.
      *
-     * @throws Exception If an error occurs during the test
      */
     @Test
-    public void testAttributes() throws Exception {
+    void testAttributes() {
 
         String[] sources = {
 
@@ -301,10 +297,9 @@ public class DefaultMergeTest {
     /**
      * Tests a merge using the IdentityMapper.
      *
-     * @throws Exception If an error occurs during the test
      */
     @Test
-    public void testIdMapper() throws Exception {
+    void testIdMapper() {
 
         String[] sources = {
                 "<root>"
@@ -347,10 +342,9 @@ public class DefaultMergeTest {
      * Tests configuration of an XmlMerge instance with inline attributes in the
      * patch document.
      *
-     * @throws Exception If an error occurs during the test
      */
     @Test
-    public void testAttributeMerge() throws Exception {
+    void testAttributeMerge() {
 
         String[] sources = {
                 "<root>"
@@ -431,10 +425,9 @@ public class DefaultMergeTest {
     /**
      * Tests a merge using a custom matcher.
      *
-     * @throws Exception If an error occurs during the test
      */
     @Test
-    public void testCustomMatcher() throws Exception {
+    void testCustomMatcher() {
 
         String[] sources = new String[]{
                 "<web-app>"
@@ -533,4 +526,3 @@ public class DefaultMergeTest {
         assertEquals(expected.trim(), result.trim());
     }
 }
-

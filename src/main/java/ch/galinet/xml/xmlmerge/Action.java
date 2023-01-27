@@ -16,7 +16,7 @@
  */
 package ch.galinet.xml.xmlmerge;
 
-import org.jdom.Element;
+import org.jdom2.Element;
 
 /**
  * Operation on two nodes creating a third node.

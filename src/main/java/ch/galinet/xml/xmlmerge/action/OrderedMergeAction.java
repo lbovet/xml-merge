@@ -24,11 +24,11 @@ import ch.galinet.xml.xmlmerge.AbstractXmlMergeException;
 import ch.galinet.xml.xmlmerge.MergeAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jdom.Attribute;
-import org.jdom.Comment;
-import org.jdom.Content;
-import org.jdom.Element;
-import org.jdom.Text;
+import org.jdom2.Attribute;
+import org.jdom2.Comment;
+import org.jdom2.Content;
+import org.jdom2.Element;
+import org.jdom2.Text;
 
 import ch.galinet.xml.xmlmerge.Action;
 import ch.galinet.xml.xmlmerge.DocumentException;

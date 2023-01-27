@@ -21,8 +21,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import ch.galinet.xml.xmlmerge.matcher.SkipMatcher;
-import org.jdom.Content;
-import org.jdom.Element;
+import org.jdom2.Content;
+import org.jdom2.Element;
 
 import ch.galinet.xml.xmlmerge.Action;
 

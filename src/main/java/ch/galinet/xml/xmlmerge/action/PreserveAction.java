@@ -17,7 +17,7 @@
 package ch.galinet.xml.xmlmerge.action;
 
 import ch.galinet.xml.xmlmerge.Action;
-import org.jdom.Element;
+import org.jdom2.Element;
 
 /**
  * Copies the original regardless of the existence of patch element.

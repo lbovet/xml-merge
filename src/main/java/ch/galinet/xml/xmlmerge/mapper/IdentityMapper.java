@@ -17,7 +17,7 @@
 package ch.galinet.xml.xmlmerge.mapper;
 
 import ch.galinet.xml.xmlmerge.Mapper;
-import org.jdom.Element;
+import org.jdom2.Element;
 
 
 /**

@@ -17,7 +17,7 @@
 package ch.galinet.xml.xmlmerge.factory;
 
 import ch.galinet.xml.xmlmerge.AbstractXmlMergeException;
-import org.jdom.Element;
+import org.jdom2.Element;
 
 import ch.galinet.xml.xmlmerge.Operation;
 import ch.galinet.xml.xmlmerge.OperationFactory;

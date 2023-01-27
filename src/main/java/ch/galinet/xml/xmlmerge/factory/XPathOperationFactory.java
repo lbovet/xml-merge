@@ -22,7 +22,7 @@ import java.util.Map;
 
 import org.jaxen.JaxenException;
 import org.jaxen.jdom.JDOMXPath;
-import org.jdom.Element;
+import org.jdom2.Element;
 
 import ch.galinet.xml.xmlmerge.AbstractXmlMergeException;
 import ch.galinet.xml.xmlmerge.MatchException;
@@ -30,14 +30,12 @@ import ch.galinet.xml.xmlmerge.Operation;
 import ch.galinet.xml.xmlmerge.OperationFactory;
 
 /**
- * An operation factory that resolves operations given a map { xpath (as
- * String), Operation }. The order in the map is relevant if several XPath
+ * An operation factory that resolves operations given a map { xpath (as String), Operation }. The order in the map is relevant if several XPath
  * matches.
- *
- * @svnLink $Revision$;$Date$;$Author$;$URL$
  *
  * @author Laurent Bovet (LBO)
  * @author Alex Mathey (AMA)
+ * @svnLink $Revision$;$Date$;$Author$;$URL$
  */
 public class XPathOperationFactory implements OperationFactory {
 
@@ -54,8 +52,7 @@ public class XPathOperationFactory implements OperationFactory {
 	/**
 	 * Sets the factory's map containing configuration properties.
 	 *
-	 * @param map
-	 *            A map containing configuration properties.
+	 * @param map A map containing configuration properties.
 	 */
 	public void setOperationMap(Map map) {
 		this.m_map = map;
@@ -63,6 +60,7 @@ public class XPathOperationFactory implements OperationFactory {
 
 	/**
 	 * Sets the default operation returned by this factory.
+	 *
 	 * @param operation The default operation returned by this factory.
 	 */
 	public void setDefaultOperation(Operation operation) {
@@ -73,12 +71,12 @@ public class XPathOperationFactory implements OperationFactory {
 	 * {@inheritDoc}
 	 */
 	public Operation getOperation(Element originalElement, Element patchElement)
-		throws AbstractXmlMergeException {
+			throws AbstractXmlMergeException {
 		Iterator it = m_map.keySet().iterator();
 		while (it.hasNext()) {
 			String xPath = (String) it.next();
 			if (matches(originalElement, xPath) || matches(patchElement,
-				xPath)) {
+					xPath)) {
 				return (Operation) m_map.get(xPath);
 			}
 		}
@@ -88,16 +86,13 @@ public class XPathOperationFactory implements OperationFactory {
 	/**
 	 * Detects whether the given element matches the given XPath string.
 	 *
-	 * @param element
-	 *            The element which will be checked
-	 * @param xPathString
-	 *            The XPath expression the element will be checked against
+	 * @param element     The element which will be checked
+	 * @param xPathString The XPath expression the element will be checked against
 	 * @return True if the given element matches the given XPath string
-	 * @throws AbstractXmlMergeException
-	 *             If an error occurred during the matching process
+	 * @throws AbstractXmlMergeException If an error occurred during the matching process
 	 */
 	private boolean matches(Element element, String xPathString)
-		throws AbstractXmlMergeException {
+			throws AbstractXmlMergeException {
 
 		if (element == null) {
 			return false;
@@ -105,11 +100,7 @@ public class XPathOperationFactory implements OperationFactory {
 
 		try {
 			JDOMXPath xPath = new JDOMXPath(xPathString);
-
-			boolean result = xPath.selectNodes(element.getParent()).contains(
-				element);
-
-			return result;
+			return xPath.selectNodes(element.getParent()).contains(element);
 
 		} catch (JaxenException e) {
 			throw new MatchException(element, e);

@@ -16,7 +16,7 @@
  */
 package ch.galinet.xml.xmlmerge;
 
-import org.jdom.Element;
+import org.jdom2.Element;
 
 /**
  * Creates operation (action, mapper and matcher) instances corresponding to a
